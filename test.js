@@ -1,7 +1,7 @@
 'use strict'
 
 const assert = require('assert')
-const clearRequire = require('clear-require')
+const clearModule = require('clear-module')
 
 // On Travis, building a PR
 {
@@ -11,8 +11,8 @@ const clearRequire = require('clear-require')
   const isPR = require('./')
   assert.strictEqual(isPR, true)
 
-  clearRequire('./')
-  clearRequire('ci-info')
+  clearModule('./')
+  clearModule('ci-info')
 }
 
 // On Travis, not building a PR
@@ -22,8 +22,8 @@ const clearRequire = require('clear-require')
   const isPR = require('./')
   assert.strictEqual(isPR, false)
 
-  clearRequire('./')
-  clearRequire('ci-info')
+  clearModule('./')
+  clearModule('ci-info')
 }
 
 // On a generic CI server
@@ -35,8 +35,8 @@ const clearRequire = require('clear-require')
   const isPR = require('./')
   assert.strictEqual(isPR, null)
 
-  clearRequire('./')
-  clearRequire('ci-info')
+  clearModule('./')
+  clearModule('ci-info')
 }
 
 // Not on a CI server
