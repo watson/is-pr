@@ -3,10 +3,10 @@
 const assert = require('assert')
 const clearModule = require('clear-module')
 
-// On Travis, building a PR
+// On Github Actions, building a PR
 {
-  process.env.TRAVIS = 'true'
-  process.env.TRAVIS_PULL_REQUEST = '42'
+  process.env.GITHUB_ACTIONS = 'true'
+  process.env.GITHUB_EVENT_NAME = 'pull_request'
 
   const isPR = require('./')
   assert.strictEqual(isPR, true)
@@ -15,9 +15,9 @@ const clearModule = require('clear-module')
   clearModule('ci-info')
 }
 
-// On Travis, not building a PR
+// On Github Actions, not building a PR
 {
-  process.env.TRAVIS_PULL_REQUEST = 'false'
+  process.env.GITHUB_EVENT_NAME = 'pusg'
 
   const isPR = require('./')
   assert.strictEqual(isPR, false)
@@ -28,8 +28,8 @@ const clearModule = require('clear-module')
 
 // On a generic CI server
 {
-  delete process.env.TRAVIS_PULL_REQUEST
-  delete process.env.TRAVIS
+  delete process.env.GITHUB_EVENT_NAME
+  delete process.env.GITHUB_ACTIONS
   process.env.CI = 'true'
 
   const isPR = require('./')
@@ -44,8 +44,8 @@ const clearModule = require('clear-module')
   delete process.env.CI
   delete process.env.CONTINUOUS_INTEGRATION
   delete process.env.BUILD_NUMBER
-  delete process.env.TRAVIS_PULL_REQUEST
-  delete process.env.TRAVIS
+  delete process.env.GITHUB_ACTIONS
+  delete process.env.GITHUB_EVENT_NAME
 
   const isPR = require('./')
   assert.strictEqual(isPR, null)
