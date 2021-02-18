@@ -10,7 +10,7 @@ Please [open an issue](https://github.com/watson/is-pr/issues) if your
 CI server or PR build isn't properly detected :)
 
 [![npm](https://img.shields.io/npm/v/is-pr.svg)](https://www.npmjs.com/package/is-pr)
-[![Build status](https://travis-ci.org/watson/is-pr.svg?branch=master)](https://travis-ci.org/watson/is-pr)
+[![Tests](https://github.com/watson/is-pr/workflows/Tests/badge.svg))](https://github.com/watson/is-pr/actions)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
 ## Installation
