@@ -1,5 +1,10 @@
 # Changelog
 
+## v2.0.0
+Breaking changes:
+
+- update to `ci-info` v3. This drops support for EOL node versions 6, 13
+
 ## v1.1.0
 
 See [ci-info

@@ -1,6 +1,6 @@
 {
   "name": "is-pr",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Detect if the current environment is a CI server configured for a PR build",
   "bin": "bin.js",
   "main": "index.js",
